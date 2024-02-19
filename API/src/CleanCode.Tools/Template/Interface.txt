@@ -1,0 +1,14 @@
+﻿using CleanCode.Business.Models;
+using CleanCode.Core.Models;
+
+namespace CleanCode.Business.Interfaces
+{
+    public interface I<entity>Service
+    {
+        Task<PagedList<<entity>Model>> Get(PaginationQuery paginationQuery);
+        Task<<entity>Model> GetById(int id);
+        Task<<entity>Model> Create(<entity>Model <lentity>Model);
+        Task Update(<entity>Model <lentity>Model);
+        Task Delete(<entity>Model <lentity>Model);
+    }
+}

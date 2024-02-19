@@ -1,0 +1,70 @@
+﻿using CleanCode.Business.Interfaces;
+using CleanCode.Business.Mapper;
+using CleanCode.Business.Models;
+using CleanCode.Core.Entities;
+using CleanCode.Core.Models;
+using CleanCode.Core.Repositories;
+using CleanCode.Core.Repositories.Base;
+using CleanCode.Util.Logging;
+using Microsoft.Extensions.Logging;
+
+namespace CleanCode.Business.Services
+{
+    public class <Entity>Service : I<Entity>Service
+    {
+        private readonly IRepository<<Entity>> _<lEntity>Repository;
+        private readonly ILogger<<Entity>Service> _logger;
+
+        public <Entity>Service(IRepository<<Entity>> <lEntity>Repository, ILogger<<Entity>Service> logger)
+        {
+            _<lEntity>Repository = <lEntity>Repository ?? throw new ArgumentNullException(nameof(<lEntity>Repository));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        }
+
+        public async Task<PagedList<<Entity>Model>> Get(PaginationQuery paginationQuery)
+        {
+            var <lEntity> = await _<lEntity>Repository.GetAsync(paginationQuery);
+            return ObjectMapper.Mapper.Map<PagedList<<Entity>Model>>(<lEntity>);
+        }
+
+        public async Task<<Entity>Model> GetById(int id)
+        {
+            var <lEntity> = await _<lEntity>Repository.GetByIdAsync(id);
+            return ObjectMapper.Mapper.Map<<Entity>Model>(<lEntity>);
+        }
+        public async Task<<Entity>Model> Create(<Entity>Model <lEntity>Model)
+        {
+            var new<Entity> = await _<lEntity>Repository.GetByIdAsync(<lEntity>Model.<Entity>Id);
+            if (new<Entity> != null)
+                throw new ApplicationException("<Entity> already exits.");
+
+            var mappedEntity = ObjectMapper.Mapper.Map<<Entity>>(<lEntity>Model);
+            if (mappedEntity == null)
+                throw new ApplicationException("<Entity> could not be mapped.");
+
+            var newEntity = await _<lEntity>Repository.AddAsync(mappedEntity);
+            _logger.LogInformationExtension("<Entity> successfully added.");
+
+            return ObjectMapper.Mapper.Map<<Entity>Model>(newEntity);
+        }
+        public async Task Update(<Entity>Model <lEntity>Model)
+        {
+            var edit<Entity> = await _<lEntity>Repository.GetByIdAsync(<lEntity>Model.<Entity>Id);
+            if (edit<Entity> == null)
+                throw new ApplicationException($"<Entity> could not be loaded.");
+
+            ObjectMapper.Mapper.Map(<lEntity>Model, edit<Entity>);
+            await _<lEntity>Repository.UpdateAsync(edit<Entity>);
+            _logger.LogInformationExtension($"<Entity> successfully updated.");
+        }
+        public async Task Delete(<Entity>Model <lEntity>Model)
+        {
+            var deleted<Entity> = await _<lEntity>Repository.GetByIdAsync(<lEntity>Model.<Entity>Id);
+            if (deleted<Entity> == null)
+                throw new ApplicationException($"<Entity> could not be loaded.");
+
+            await _<lEntity>Repository.DeleteAsync(ObjectMapper.Mapper.Map<<Entity>>(deleted<Entity>));
+            _logger.LogInformationExtension($"<Entity> successfully deleted.");
+        }
+    }
+}

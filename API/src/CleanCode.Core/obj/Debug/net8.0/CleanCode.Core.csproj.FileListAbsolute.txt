@@ -1,0 +1,11 @@
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Core\bin\Debug\net8.0\CleanCode.Core.deps.json
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Core\bin\Debug\net8.0\CleanCode.Core.dll
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Core\bin\Debug\net8.0\CleanCode.Core.pdb
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Core\obj\Debug\net8.0\CleanCode.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Core\obj\Debug\net8.0\CleanCode.Core.AssemblyInfoInputs.cache
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Core\obj\Debug\net8.0\CleanCode.Core.AssemblyInfo.cs
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Core\obj\Debug\net8.0\CleanCode.Core.csproj.CoreCompileInputs.cache
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Core\obj\Debug\net8.0\CleanCode.Core.dll
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Core\obj\Debug\net8.0\refint\CleanCode.Core.dll
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Core\obj\Debug\net8.0\CleanCode.Core.pdb
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Core\obj\Debug\net8.0\ref\CleanCode.Core.dll

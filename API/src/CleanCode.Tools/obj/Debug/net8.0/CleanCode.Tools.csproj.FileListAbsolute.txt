@@ -1,0 +1,14 @@
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\bin\Debug\net8.0\CleanCode.Tools.exe
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\bin\Debug\net8.0\CleanCode.Tools.deps.json
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\bin\Debug\net8.0\CleanCode.Tools.runtimeconfig.json
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\bin\Debug\net8.0\CleanCode.Tools.dll
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\bin\Debug\net8.0\CleanCode.Tools.pdb
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\obj\Debug\net8.0\CleanCode.Tools.GeneratedMSBuildEditorConfig.editorconfig
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\obj\Debug\net8.0\CleanCode.Tools.AssemblyInfoInputs.cache
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\obj\Debug\net8.0\CleanCode.Tools.AssemblyInfo.cs
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\obj\Debug\net8.0\CleanCode.Tools.csproj.CoreCompileInputs.cache
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\obj\Debug\net8.0\CleanCode.Tools.dll
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\obj\Debug\net8.0\refint\CleanCode.Tools.dll
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\obj\Debug\net8.0\CleanCode.Tools.pdb
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\obj\Debug\net8.0\CleanCode.Tools.genruntimeconfig.cache
+D:\BAPS\Clean Code Ddemo\CleanCodeDemo\API\src\CleanCode.Tools\obj\Debug\net8.0\ref\CleanCode.Tools.dll

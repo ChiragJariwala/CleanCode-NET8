@@ -1,0 +1,20 @@
+﻿Update path in CleanCode.bat and run it.It has all below steps.
+
+---------------------------------------
+References
+--https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity?view=aspnetcore-6.0&tabs=visual-studio
+--https://www.learnentityframeworkcore.com/walkthroughs/existing-database
+
+if packages are not installed, Installed through Menu>Tools>Nuget Package Manager
+> dotnet add package Microsoft.EntityFrameworkCore.Design
+> dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+<<<<<Steps to generate models>>>>>
+
+---Don't delete exiting file, as it gives build error. scaffold does not work
+---change start up project to CleanCode.Core
+1. cd C:\{Project_Path}\API\src\CleanCode.Core
+2. Run bellow commnad, add required table using -t Table Name
+dotnet ef dbcontext scaffold "Server=103.92.235.45;Database=stihydra_balnagari;persist security info=True;user id=stihydra_bal;password=bapa@100#;" Microsoft.EntityFrameworkCore.SqlServer -p CleanCode.Core.csproj -o Entities -c CleanCodeContext -t Role -t User -t UserTxn -t Volunteer -t VolunteerProfileImage -t VolunteerSkill -t BillBatch -t BillEntry -t Designation -t Department -t Vehicle -t VehicleAvailability -t FuelCostLog -t VehicleCategory -t FuelType -t KilometerLog -t VehicleAllottedToDriver -t VehicleRequest -t VehicleRequestApproval -t VehicleBooking -t VehicleTrip -t JourneyStatus  -d -f
+3. Set CleanCode.Tools as start up ptoject and Run CleanCode.Tools which will create all related classes
+4. Set Run CleanCode.Api as start up project and run it, It should show all endpoints.

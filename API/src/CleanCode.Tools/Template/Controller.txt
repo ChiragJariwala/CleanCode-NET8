@@ -1,0 +1,131 @@
+﻿using AutoMapper;
+using CleanCode.Api.Models;
+using CleanCode.Business.Interfaces;
+using CleanCode.Business.Models;
+using CleanCode.Core.Models;
+using CleanCode.Util.Logging;
+using CleanCode.Util.Models;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+
+namespace CleanCode.Api.Controllers
+{
+    [Route("api/v{version:apiVersion}/<Entity>")]
+    [ApiController]
+    [ApiVersion("1.0")]
+    public class <Entity>Controller : ControllerBase
+    {
+        private readonly I<Entity>Service _<lEntity>Service;
+        private readonly ILogger<<Entity>Controller> _logger;
+        private readonly IMapper _mapper;
+
+        public <Entity>Controller(I<Entity>Service <lEntity>Service, ILogger<<Entity>Controller> logger, IMapper mapper)
+        {
+            _<lEntity>Service = <lEntity>Service ?? throw new ArgumentNullException(nameof(<lEntity>Service));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+        }
+
+        [HttpGet("GetAll")]
+        public async Task<ActionResult<IEnumerable<<Entity>ApiModel>>> GetAll(
+            [FromQuery] PaginationQuery paginationQuery)
+        {
+            _logger.LogInformationExtension("GetAll");
+            var <lEntity>List = await _<lEntity>Service.Get(paginationQuery);
+            if (<lEntity>List == null)
+            {
+                _logger.LogErrorExtension("<Entity> list not found", null);
+                return NotFound(new Response<<Entity>ApiModel>(null, false, "<Entity> list not found"));
+            }
+
+            _logger.LogInformationExtension($"Found {<lEntity>List.Count} entries");
+
+            var paginationMetadata = new
+            {
+                <lEntity>List.TotalCount,
+                <lEntity>List.PageSize,
+                <lEntity>List.CurrentPage,
+                <lEntity>List.TotalPages,
+                <lEntity>List.HasPreviousPage,
+                <lEntity>List.HasNextPage
+            };
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(paginationMetadata));
+            Response<IEnumerable<<Entity>ApiModel>> response = new();
+            response.Data = _mapper.Map<IEnumerable<<Entity>ApiModel>>(<lEntity>List);
+            response.ItemsCount = <lEntity>List.Count;
+            return Ok(response);
+        }
+
+        [HttpGet("GetById")]
+        public async Task<ActionResult<<Entity>ApiModel>> GetById(int id)
+        {
+            _logger.LogInformationExtension($"Get <Entity> By Id: {id}");
+            var <lEntity>List = await _<lEntity>Service.GetById(id);
+            if (<lEntity>List == null)
+            {
+                _logger.LogErrorExtension($"No <lEntity> list found with id {id}", null);
+                return NotFound(new Response<<Entity>ApiModel>(null, false, $"No <lEntity> with id {id}"));
+            }
+            return Ok(new Response<<Entity>ApiModel>(_mapper.Map<<Entity>ApiModel>(<lEntity>List)));
+        }
+
+        [HttpPost("Add")]
+        public async Task<ActionResult<<Entity>ApiModel>> Add([FromBody] <Entity>ApiModel <lEntity>ApiModel)
+        {
+            _logger.LogInformationExtension($"Add <Entity> - Id: {<lEntity>ApiModel.<Entity>Id}");
+            var userId = Convert.ToInt32(User.Claims.FirstOrDefault(a => a.Type == "sub")?.Value);
+            var <lEntity>Model = _mapper.Map<<Entity>Model>(<lEntity>ApiModel);
+            <lEntity>Model.CreatedBy = <lEntity>Model.ModifiedBy = userId;
+            <lEntity>Model.CreatedDate = <lEntity>Model.ModifiedDate = DateTime.Now;
+            var new<Entity> = await _<lEntity>Service.Create(<lEntity>Model);
+            if (new<Entity>.<Entity>Id > 0)
+            {
+                return Ok(new Response<<Entity>ApiModel>(_mapper.Map<<Entity>ApiModel>(new<Entity>), true, "<Entity> added Successfully."));
+            }
+            return BadRequest(new Response<<Entity>ApiModel>(null, false, "Unable to add <Entity> details"));
+        }
+
+        [HttpPost("Edit")]
+        public async Task<ActionResult<<Entity>ApiModel>> Edit([FromBody] <Entity>ApiModel <lEntity>ApiModel)
+        {
+            _logger.LogInformationExtension($"Edit <Entity> - Id: {<lEntity>ApiModel.<Entity>Id}");
+
+            if (!ModelState.IsValid)
+            {
+                _logger.LogErrorExtension("Invalid <Entity> object sent from client.", null);
+                return BadRequest(new Response<<Entity>ApiModel>(null, false, "Invalid model object"));
+            }
+            var <lEntity>Entity = await _<lEntity>Service.GetById(<lEntity>ApiModel.<Entity>Id);
+            if (<lEntity>Entity == null)
+            {
+                _logger.LogErrorExtension($"<Entity> with id: {<lEntity>ApiModel.<Entity>Id}, hasn't been found in db.", null);
+                return NotFound(new Response<<Entity>ApiModel>(null, false, $"<Entity> with id: {<lEntity>ApiModel.<Entity>Id}, hasn't been found in db."));
+            }
+            var userId = Convert.ToInt32(User.Claims.FirstOrDefault(a => a.Type == "sub")?.Value);
+            <lEntity>Entity.ModifiedBy = userId;
+            <lEntity>Entity.ModifiedDate = DateTime.Now;
+            _mapper.Map(<lEntity>ApiModel, <lEntity>Entity);
+            await _<lEntity>Service.Update(<lEntity>Entity);
+            return Ok(new Response<<Entity>ApiModel>(_mapper.Map<<Entity>ApiModel>(<lEntity>Entity), true, "<Entity> updated Successfully."));
+        }
+
+         [HttpDelete("Delete")]
+        public async Task<ActionResult<<Entity>ApiModel>> Delete(int id)
+        {
+            _logger.LogInformationExtension($"Delete <Entity> - Id: {id}");
+
+            var <lEntity>Entity = await _<lEntity>Service.GetById(id);
+            if (<lEntity>Entity == null)
+            {
+                _logger.LogErrorExtension($"<Entity> with id: {id}, hasn't been found in db.", null);
+                return NotFound(new Response<<Entity>ApiModel>(null, false,
+                    $"<Entity> with id: {id}, hasn't been found in db."));
+            }
+            var userId = Convert.ToInt32(User.Claims.FirstOrDefault(a => a.Type == "sub")?.Value);
+            <lEntity>Entity.ModifiedBy = userId;
+            <lEntity>Entity.ModifiedDate = DateTime.Now;
+            await _<lEntity>Service.Delete(<lEntity>Entity);
+            return Ok(new Response<<Entity>ApiModel>(null, true, "<Entity> deleted Successfully."));
+        }
+    }
+}

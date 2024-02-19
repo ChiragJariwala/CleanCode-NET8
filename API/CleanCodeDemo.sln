@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D104BA86-C234-4894-A697-2FB1F1DB5DE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCode.API", "src\CleanCode.API\CleanCode.API.csproj", "{219047BC-5C60-44DE-BC13-26F1727F27CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCode.Business", "src\CleanCode.Business\CleanCode.Business.csproj", "{12E45D3E-9423-4058-879D-57D27A862FBB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCode.Core", "src\CleanCode.Core\CleanCode.Core.csproj", "{16B51055-6736-4A9E-B724-FF0929954550}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCode.Infrastructure", "src\CleanCode.Infrastructure\CleanCode.Infrastructure.csproj", "{FA7999B4-42C5-4F3E-8A07-271C5170D20D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCode.Tools", "src\CleanCode.Tools\CleanCode.Tools.csproj", "{EBDFAAA2-032F-4B88-A4EA-7974090B7485}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanCode.Util", "src\CleanCode.Util\CleanCode.Util.csproj", "{996AE6A0-CF71-43B8-BBAC-82CBFF8F8577}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{219047BC-5C60-44DE-BC13-26F1727F27CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{219047BC-5C60-44DE-BC13-26F1727F27CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{219047BC-5C60-44DE-BC13-26F1727F27CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{219047BC-5C60-44DE-BC13-26F1727F27CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12E45D3E-9423-4058-879D-57D27A862FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12E45D3E-9423-4058-879D-57D27A862FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12E45D3E-9423-4058-879D-57D27A862FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12E45D3E-9423-4058-879D-57D27A862FBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16B51055-6736-4A9E-B724-FF0929954550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16B51055-6736-4A9E-B724-FF0929954550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16B51055-6736-4A9E-B724-FF0929954550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16B51055-6736-4A9E-B724-FF0929954550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA7999B4-42C5-4F3E-8A07-271C5170D20D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA7999B4-42C5-4F3E-8A07-271C5170D20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA7999B4-42C5-4F3E-8A07-271C5170D20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA7999B4-42C5-4F3E-8A07-271C5170D20D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBDFAAA2-032F-4B88-A4EA-7974090B7485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBDFAAA2-032F-4B88-A4EA-7974090B7485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBDFAAA2-032F-4B88-A4EA-7974090B7485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBDFAAA2-032F-4B88-A4EA-7974090B7485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{996AE6A0-CF71-43B8-BBAC-82CBFF8F8577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{996AE6A0-CF71-43B8-BBAC-82CBFF8F8577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{996AE6A0-CF71-43B8-BBAC-82CBFF8F8577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{996AE6A0-CF71-43B8-BBAC-82CBFF8F8577}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{219047BC-5C60-44DE-BC13-26F1727F27CD} = {D104BA86-C234-4894-A697-2FB1F1DB5DE2}
+		{12E45D3E-9423-4058-879D-57D27A862FBB} = {D104BA86-C234-4894-A697-2FB1F1DB5DE2}
+		{16B51055-6736-4A9E-B724-FF0929954550} = {D104BA86-C234-4894-A697-2FB1F1DB5DE2}
+		{FA7999B4-42C5-4F3E-8A07-271C5170D20D} = {D104BA86-C234-4894-A697-2FB1F1DB5DE2}
+		{EBDFAAA2-032F-4B88-A4EA-7974090B7485} = {D104BA86-C234-4894-A697-2FB1F1DB5DE2}
+		{996AE6A0-CF71-43B8-BBAC-82CBFF8F8577} = {D104BA86-C234-4894-A697-2FB1F1DB5DE2}
+	EndGlobalSection
+EndGlobal
