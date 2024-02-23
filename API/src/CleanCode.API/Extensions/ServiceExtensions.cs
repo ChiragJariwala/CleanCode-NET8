@@ -36,12 +36,12 @@ namespace CleanCode.Api.Extensions
             // Add Infrastructure Layer
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
            
-            services.AddScoped<IMetadataRepository, MetadataRepository>();
+           // services.AddScoped<IMetadataRepository, MetadataRepository>();
 
             services.AddScoped<Core.Services.ISsoService, Infrastructure.Services.SsoService>();
 
             // Add Business Layer
-            services.AddScoped<IMetadataService, MetadataService>();
+           // services.AddScoped<IMetadataService, MetadataService>();
           
 
             //<Do not Delete this line>

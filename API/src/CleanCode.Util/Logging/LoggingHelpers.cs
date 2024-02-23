@@ -51,7 +51,7 @@ namespace CleanCode.Util.Logging
                 .Enrich.WithCorrelationId()
                 .Enrich.WithMachineName()
                 .Enrich.WithClientIp()
-                .Enrich.WithClientAgent()
+                //.Enrich.WithClientAgent()
                 .Enrich.WithProcessId()
                 .Enrich.WithProcessName()
                 .Enrich.WithThreadId()

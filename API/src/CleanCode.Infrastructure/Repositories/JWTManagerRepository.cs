@@ -60,21 +60,7 @@ namespace CleanCode.Infrastructure.Repositories
                     Tokens result = new Tokens { Token = tokenHandler.WriteToken(token),UserId = userrecord.UserId, Name = userrecord.FullName, MobileNo = userrecord.MobileNo, lstDepartmentDesignation = new List<UserDepartmentDesignationStatus>() };
                     dynamicParameters = new DynamicParameters();
                     dynamicParameters.Add("@VolunteerId", userrecord.VolunteerId);                    
-                    var usersDepartments = _dapper.GetAll<VolunteerDepartmentodel>(SQLQueries.SelectUserDepartmentDesignations, dynamicParameters, CommandType.Text);
-                    foreach (VolunteerDepartmentodel vt in usersDepartments)
-                    {
-                        result.lstDepartmentDesignation.Add(new UserDepartmentDesignationStatus()
-                        {
-                            VolunteerTxnId = vt.VolunteerTxnId,
-                            VolunteerId = userrecord.VolunteerId,
-                            DepartmentId = vt.DepartmentId,
-                            DepartmentName = vt.DepartmentName,
-                            DesignationName = vt.DesignationName,
-                            DesignationId = vt.DesignationId,
-                            Status = vt.IsActive.HasValue ? vt.IsActive.Value : false
-                        });
-                    }
-
+                   
                     return result;
                 }
                 else

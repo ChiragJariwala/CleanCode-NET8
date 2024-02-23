@@ -28,9 +28,9 @@ namespace CleanCode.Business.Mapper
         public BNMSDtoMapper()
         {
             CreateMap(typeof(PagedList<>), typeof(PagedList<>)).ConvertUsing(typeof(PagedListConverter<,>));
-            CreateMap<Product, ProductModel>().ReverseMap();
-            CreateMap<Category, CategoryModel>().ReverseMap();
-            CreateMap<Role, RoleModel>().ReverseMap();
+            //CreateMap<Product, ProductModel>().ReverseMap();
+            //CreateMap<Category, CategoryModel>().ReverseMap();
+            //CreateMap<Role, RoleModel>().ReverseMap();
             CreateMap<User, UserModel>().ReverseMap();
             
 

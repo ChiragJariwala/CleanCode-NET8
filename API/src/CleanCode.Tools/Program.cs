@@ -64,7 +64,7 @@ public class Program
             {
                 FileInfo fileInfo = new(item);
                 var sFromClassName = fileInfo.Name.Replace(".cs", "");
-                if (fileInfo.Name == "BNMSContext.cs" || fileInfo.Name == "OrderInput.cs" || fileInfo.Name == "OrderResponse.cs")
+                if (fileInfo.Name == "CleanCodeContext.cs")
                     continue;
                 string input = string.Empty;
                 using (StreamReader reader = new(item))
