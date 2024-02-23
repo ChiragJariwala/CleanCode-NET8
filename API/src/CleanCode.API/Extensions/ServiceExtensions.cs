@@ -34,7 +34,7 @@ namespace CleanCode.Api.Extensions
             //.AsMatchingInterface().WithScopedLifetime());
 
             // Add Infrastructure Layer
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            //services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
            
            // services.AddScoped<IMetadataRepository, MetadataRepository>();
 
@@ -58,13 +58,13 @@ namespace CleanCode.Api.Extensions
             services.Configure<SsoApiModel>(configuration.GetSection("SsoService"));
 
             // HealthChecks
-            services.AddHealthChecks().AddDbContextCheck<CleanCodeContext>();
+            //services.AddHealthChecks().AddDbContextCheck<CleanCodeContext>();
         }
 
         private static void ConfigureDatabases(IServiceCollection services, IConfiguration configuration)
         {
             string dbConnectionString = configuration.GetConnectionString("ConnectionString");
-            services.AddDbContext<CleanCodeContext>(options => options.UseSqlServer(dbConnectionString));
+            //services.AddDbContext<CleanCodeContext>(options => options.UseSqlServer(dbConnectionString));
         }
 
         private static string CreateConnectionString(DbConnectionSettings databaseConnectionSettings)

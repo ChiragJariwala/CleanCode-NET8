@@ -31,7 +31,7 @@ namespace CleanCode.Business.Mapper
             //CreateMap<Product, ProductModel>().ReverseMap();
             //CreateMap<Category, CategoryModel>().ReverseMap();
             //CreateMap<Role, RoleModel>().ReverseMap();
-            CreateMap<User, UserModel>().ReverseMap();
+            //CreateMap<User, UserModel>().ReverseMap();
             
 
             //<Do not Delete this line>
