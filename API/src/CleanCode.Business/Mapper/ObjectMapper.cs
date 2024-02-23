@@ -23,9 +23,9 @@ namespace CleanCode.Business.Mapper
         public static IMapper Mapper => Lazy.Value;
     }
 
-    public class BNMSDtoMapper : Profile
+    public class CleanCodeDtoMapper : Profile
     {
-        public BNMSDtoMapper()
+        public CleanCodeDtoMapper()
         {
             CreateMap(typeof(PagedList<>), typeof(PagedList<>)).ConvertUsing(typeof(PagedListConverter<,>));
             //CreateMap<Product, ProductModel>().ReverseMap();

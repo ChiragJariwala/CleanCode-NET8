@@ -167,7 +167,7 @@ public class Program
                 return true;
             }
         }
-        if (fileName == "BNMSContext.cs" || fileName == "OrderInput.cs" || fileName == "Metadata.cs" || fileName == "OrderResponse.cs")
+        if (fileName == "CleanCodeContext.cs" || fileName == "OrderInput.cs" || fileName == "Metadata.cs" || fileName == "OrderResponse.cs")
         {
             return true;
         }
@@ -361,7 +361,7 @@ public class Program
                 if (!ForceGenerate)
                 {
                     //Update Mapper class
-                    string sDestinationMapperFile = Path.Combine(SrcFolder, "CleanCode.Api", "Mapper", "BNMSProfile.cs");
+                    string sDestinationMapperFile = Path.Combine(SrcFolder, "CleanCode.Api", "Mapper", "CleanCodeProfile.cs");
                     UpdateMapperclass(sDestinationMapperFile, sbMapper.ToString());
                 }
             }
