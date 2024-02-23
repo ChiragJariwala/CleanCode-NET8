@@ -9,13 +9,13 @@ public class Program
     const string sDonotDelete = "//<Do not Delete this line>";
     static readonly string ExePath = Directory.GetCurrentDirectory();
     // remove other path from name
-    static readonly string SrcFolder = ExePath.Replace(@"CleanCode.Tools\bin\Debug\net6.0", "");
+    static readonly string SrcFolder = ExePath.Replace(@"CleanCode.Tools\bin\Debug\net8.0", "");
     static readonly string ToolsTemplateFolder = Path.Combine(SrcFolder, "CleanCode.Tools", "Template");
     static readonly string CoreEntitiesFolder = Path.Combine(SrcFolder, "CleanCode.Core", "Entities");
     static readonly string BusinessModelFolder = Path.Combine(SrcFolder, "CleanCode.Business", "Models");
     static readonly string BusinessInterfaceFolder = Path.Combine(SrcFolder, "CleanCode.Business", "Interfaces");
     static readonly string BusinessServicesFolder = Path.Combine(SrcFolder, "CleanCode.Business", "Services");
-    static readonly string ApiModelsFolder = Path.Combine(SrcFolder, "CleanCode.Api", "Models");
+    static readonly string ApiModelsFolder = Path.Combine(SrcFolder, "CleanCode.API", "Models");
     static readonly string ApiControllersFolder = Path.Combine(SrcFolder, "CleanCode.Api", "Controllers");
 
     public static bool ForceGenerate { get; set; }

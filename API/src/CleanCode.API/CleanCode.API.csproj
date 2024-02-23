@@ -26,4 +26,8 @@
 	  <ProjectReference Include="..\CleanCode.Util\CleanCode.Util.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Models\" />
+	</ItemGroup>
+
 </Project>
